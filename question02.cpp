@@ -6,7 +6,7 @@
 
 using namespace std;
 
-double doubleSummer(double arg1, double arg2, double arg3)
+double doubleSummer(double arg1, double arg2, double arg3) //use a verb form usually.
 {
     double output = arg1 + arg2 + arg3;
     return output;
@@ -18,7 +18,7 @@ double doubleSummer(double arg1, double arg2, double arg3, double arg4)
     return output;
 }
 
-double divider(double numerator, int divisor)
+double divider(double numerator, int divisor) // divide would be better
 {
     double output = numerator / divisor;
     return output;
@@ -94,30 +94,30 @@ int main()
             FGPA = divider(doubleSummer(GPA[0], GPA[1], GPA[2]), 3);
             break;
 
-        default:
+        case 4:
             FGPA = divider(doubleSummer(GPA[0], GPA[1], GPA[2], GPA[3]), 4);
             break;
         }
 
         cout << "Name :\t\t\t" << sName << endl;
         cout << "Registration Number :\t" << sReg << endl;
-        cout << "Degree type :\t\t" << criteria << endl << endl;
+        cout << "Degree type :\t\t" << criteria << endl
+             << endl;
 
         for (int i = 0; i < GPACounter; i++)
         {
-            cout << "Level " << i+1 << " GPA " << GPA[i] << ", ";
+            cout << "Level " << i + 1 << " GPA " << GPA[i] << ", ";
         }
         cout << endl;
 
         cout << "FGPA :\t" << FGPA << endl;
 
         cout << "\nWould you like to perform another operation? (Y/N)\n";
-            string redoSelector;
-            redoSelector = sanitizedInputsStr();
-            if (redoSelector == "n" || redoSelector == "N")
-            {
-                return 0;
-            }
-
+        string redoSelector;
+        redoSelector = sanitizedInputsStr();
+        if (redoSelector == "n" || redoSelector == "N")
+        {
+            return 0;
+        }
     } while (true);
 }
